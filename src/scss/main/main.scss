@@ -1,0 +1,208 @@
+@import '../partials/breakpoints';
+@import '../partials/variebles';
+@import '../partials/mixins';
+@import '../header/header.scss';
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  @include desktop_xl{
+    font-size: 18px;
+  }
+  @include desktop_lg{
+    font-size: 16px;
+  }
+  @include tablet_md{
+    font-size: 14px;
+  }
+  @include tablet_xs {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1;
+}
+
+.wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Assistant', sans-serif;
+}
+
+[class*="__container"] {
+  width: 100%;
+  overflow: hidden;
+}
+
+.main{
+  margin-top: 70px;
+  .main__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-color: #1B1B1B;
+    .main__movie_container{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @include desktop_xxl{
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include tablet_ml{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      grid-gap: 30px;
+      .main__movie_card{
+        max-width: 442px;
+        color: #fff;
+        @include tablet_ml {
+          max-width: 100%;
+        }
+        .main_movie_card_img{
+          width: 100%;
+          height: 271px;
+          @include desktop_xxxl{
+            height: 200px;
+          }
+          @include tablet_md{
+            height: 120px;
+          }
+          @include tablet_xs{
+            height: 100px;
+          }
+          @include tablet_ml{
+            height: 271px;
+          }
+          @include mobile_lg{
+            height: 210px;
+          }
+          background-image: url('../../../images/img 1.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+    
+          span{
+            position: absolute;
+            padding: 2px 7px;
+            background: #1B1B1B;
+            border-radius: 3px;
+            bottom: 10px;
+            right: 12px;
+          }
+        }
+
+        .main__movie_card_title{
+          display: flex;
+          margin-top: 20px;
+          justify-content: space-between;
+          align-items: center;
+          p{
+            max-width: 372px;
+          }
+        }
+      }
+    }
+
+    .main__login_container{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      background-color: rgba($color: #000000, $alpha: .7);
+      margin-top: -100px;
+      z-index: 50;
+
+      .main__login{
+        width: 500px;
+        height: 668px;
+        border-radius: 15px;
+        background-color: #121212;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        .main__login_logo{
+          width: 180px;
+          height: 78px;
+          border-radius: 10px;
+          background: $orange;
+        }
+
+        .main__login_form{
+          width: 100%;
+          margin-top: 51px;
+
+          .main__login_form_input{
+            width: 100%;
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid #969696;
+            padding: 0 20px;
+            margin-top: 30px;
+
+            input{
+              width: 100%;
+              height: 100%;
+              background: none;
+              border: none;
+              outline: none;
+              color: #fff;
+              font-size: 20px;
+              padding: 0 15px;
+              font-family: 'Assistant', sans-serif;
+            }
+          }
+          a{
+            display: block;
+            text-align: right;
+            padding: 60px 0;
+          }
+
+          button{
+            width: 100%;
+            padding: 25px 0;
+            background-color: $orange;
+            border: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Assistant', sans-serif;
+            border-radius: 10px;
+          }
+        }
+
+      }
+    }
+  }
+}

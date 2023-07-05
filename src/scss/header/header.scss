@@ -1,0 +1,226 @@
+@import '../partials/breakpoints';
+@import '../partials/variebles';
+@import '../partials/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&display=swap');
+
+.header{
+  width: 100%;
+  position: relative;
+  .header__container{
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212;
+    box-sizing: border-box;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 50;
+
+    .header__drop_nav{
+      width: 242px;
+      height: 100vh;
+      position: fixed;
+      background: #121212;
+      top: 0;
+      transition: .3s;
+      z-index: 49;
+      .header__drop_menu{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        padding-top: 90px;
+        gap: 17px;
+          .header__drop_link{
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            padding: 8px 0;
+            &:hover{
+              background-color: #36363633;
+            }
+          }
+          .active{
+            color: $orange;
+            background-color: #36363633;
+          }
+        }
+      }
+    }
+
+    .header__logo_block{
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      @include desktop_xl{
+        gap: 30px;
+      }
+      @include desktop_lg{
+        gap: 20px;
+      }
+      @include tablet_md{
+        gap: 0;
+      }
+      @include tablet_xs{
+        gap: 20px;
+      }
+      @include mobile_lg {
+        gap: 10px;
+      }
+      z-index: 50;
+  
+      .header__burger{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        img{
+          width: 24px;
+          height: 24px;
+        }
+      }
+  
+      .header__logo{
+        width: 106px;
+        height: 46px;
+        @include tablet_md{
+          width: 88px;
+          height: 36px;
+        }
+        @include mobile_lg{
+          width: 51px;
+          height: 27px;
+        }
+        @include tablet_xs {
+          border-radius: 10px;
+        }
+        background: $orange;
+      }
+    }
+  
+    .header__menu{
+      display: flex;
+      @include tablet_xs{
+        display: none;
+      }
+      justify-content: space-between;
+      gap: 70px;
+      @include desktop_xl{
+        gap: 50px;
+      }
+      @include desktop_lg{
+        gap: 30px;
+      }
+      @include tablet_lg{
+        gap: 10px;
+      }
+      .active{
+        border-bottom: 3px solid $orange;
+      }
+    }
+
+
+
+    .header__search{
+      width: 425px;
+      @include desktop_xl{
+        width: 350px;
+      }
+      @include desktop_lg{
+        width: 250px;
+      }
+      @include tablet_md{
+        width: 200px;
+      }
+      min-height: 35px;
+      background-color: #242424;
+      display: flex;
+      @include tablet_xs{
+        display: none;
+      }
+      align-items: center;
+      border-radius: 5px;
+      overflow: hidden;
+      .header__search_input{
+        width: 90%;
+        min-height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        @include desktop_xl{
+          font-size: 18px;
+        }
+        @include desktop_lg{
+          font-size: 16px;
+        }
+        @include tablet_md{
+          font-size: 14px;
+        }
+        color:  #fff;
+        font-family: 'Assistant', sans-serif !important;
+        padding: 0 15px;
+      }
+      .header__search_btn{
+        width: 50px;
+        height: 25px;
+        background: $orange;
+        border: none;
+        border-radius: 5px;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  
+    .header__profile{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @include tablet_md{
+        gap: 10px;
+      }
+      @include tablet_xs {
+        gap: 20px;
+      }
+      @include mobile_lg{
+        gap: 15px;
+      }
+      z-index: 50;
+
+      .header__mobile_search_icon{
+        display: none;
+        @include tablet_xs {
+          display: block;
+        }
+        width: 24px;
+        height: 24px;
+      }
+
+      .header__wish{
+        position: relative;
+        span{
+          width: 15px;
+          height: 15px;
+          background-color: $orange;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          font-size: 10px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          color: #fff;
+        }
+      }
+      .header__log_btn{
+        color: $orange;
+      }
+    }
+  }
